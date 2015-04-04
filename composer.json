@@ -1,5 +1,5 @@
 {
-    "name": "2amigos/yii2-grid-view-library",
+    "name": "dezmont765/yii2-grid-view-library",
     "description": "GridView Widget Extensions for Yii2.",
     "keywords": ["yii", "extension", "widget", "grid"],
     "type": "yii2-extension",
