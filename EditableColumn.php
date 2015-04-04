@@ -54,6 +54,12 @@ class EditableColumn extends DataColumn
      */
     public $language = null;
 
+    /**@var string the js callback to perform custom displaying of value in element's text.
+     * Please refer to the X-editable.js plugin web page for details.
+     * @see http://vitalets.github.io/x-editable/docs.html#editable-options
+     */
+    public $display = null;
+
     /**
      * @inheritdoc
      * @throws \yii\base\InvalidConfigException
@@ -154,7 +160,14 @@ class EditableColumn extends DataColumn
         $rel = $this->options['rel'];
         $selector = "a[rel=\"$rel\"]";
         $grid = "#{$this->grid->id}";
-        $js[] = ";jQuery('$selector').editable();";
+        if(!is_null($this->display))
+        {
+            $js[] = ";jQuery('$selector').editable({display: ".$this->display."});";
+        }
+        else
+        {
+            $js[] = ";jQuery('$selector').editable();";
+        }
         $js[] = "dosamigos.editableColumn.registerHandler('$grid', '$selector');";
         $view->registerJs(implode("\n", $js));
     }
