@@ -16,7 +16,7 @@ use yii\web\AssetBundle;
 
 class EditableColumnAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/2amigos/yii2-grid-view-library/assets/editable';
+    public $sourcePath = '@vendor/dezmont765/yii2-grid-view-library/assets/editable';
 
     public $js = ['js/dosamigos-editable.column.js'];
 
